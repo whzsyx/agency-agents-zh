@@ -23,6 +23,7 @@
 #   workbuddy    — WorkBuddy skill 文件 (~/.workbuddy/skills/<slug>/SKILL.md)
 #   hermes       — Hermes Agent skill 文件 (~/.hermes/skills/<category>/<slug>/SKILL.md)
 #   kiro         — Kiro agent JSON 文件 (.kiro/agents/*.json + prompts/*.md)
+#   qoder        — Qoder 自定义智能体文件 (.qoder/agents/*.md)
 #   all          — 所有工具（默认）
 #
 # 输出到仓库根目录下的 integrations/<tool>/。
@@ -380,7 +381,7 @@ convert_codex() {
   # TOML 多行基本字符串（"""..."""）中反斜杠必须转义为 \\
   # 同时转义三引号（极罕见但防御性处理）
   local escaped_body
-  escaped_body="$(echo "$body" | sed -e 's/\\/\\\\/g' -e 's/"""/\\"""/')"
+  escaped_body="$(echo "$body" | sed -e 's/\\/\\\\/g' -e 's/"""/\\"""/g')"
 
   local escaped_desc
   escaped_desc="$(echo "$description" | sed -e 's/\\/\\\\/g' -e 's/"/\\"/g')"
@@ -411,6 +412,59 @@ convert_deerflow() {
 ---
 name: ${slug}
 description: ${description}
+---
+${body}
+HEREDOC
+}
+
+# 根据目录名获取 Qoder 工具集合
+get_qoder_tools() {
+  local dirpath="$1"
+  # 提取顶级目录名（处理子目录情况，如 game-development/unity）
+  local topdir
+  topdir="$(echo "$dirpath" | sed "s|^$REPO_ROOT/||" | cut -d'/' -f1)"
+
+  case "$topdir" in
+    academic)           echo "Read, Write, WebSearch, WebFetch" ;;
+    design)             echo "Read, Write, WebFetch" ;;
+    engineering)        echo "Read, Grep, Glob, Bash, Edit, Write" ;;
+    finance)            echo "Read, Write, WebSearch" ;;
+    game-development)   echo "Read, Bash, Edit, Write" ;;
+    hr)                 echo "Read, Write, WebFetch" ;;
+    legal)              echo "Read, Write, WebFetch" ;;
+    marketing)          echo "Read, Write, WebSearch, WebFetch" ;;
+    paid-media)         echo "Read, Write, WebSearch" ;;
+    product)            echo "Read, Write, WebSearch, WebFetch" ;;
+    project-management) echo "Read, Write, Bash" ;;
+    sales)              echo "Read, Write, WebFetch, WebSearch" ;;
+    spatial-computing)  echo "Read, Bash, Edit, Write" ;;
+    specialized)        echo "Read, Write, WebFetch, WebSearch" ;;
+    supply-chain)       echo "Read, Write, WebFetch" ;;
+    support)            echo "Read, Write, WebFetch, WebSearch" ;;
+    testing)            echo "Read, Bash, Grep, Edit" ;;
+    *)                  echo "Read, Write" ;;  # 默认工具集
+  esac
+}
+
+convert_qoder() {
+  local file="$1"
+  local description slug outfile body tools
+
+  description="$(get_field "description" "$file")"
+  slug="$(slugify_from_file "$file")"
+  body="$(get_body "$file")"
+  tools="$(get_qoder_tools "$(dirname "$file")")"
+
+  outfile="$OUT_DIR/qoder/agents/${slug}.md"
+  mkdir -p "$OUT_DIR/qoder/agents"
+
+  # Qoder 自定义智能体格式：带 YAML frontmatter 的 .md 文件
+  # name 使用文件名（已是 kebab-case），tools 根据目录自动推荐
+  cat > "$outfile" <<HEREDOC
+---
+name: ${slug}
+description: ${description}
+tools: ${tools}
 ---
 ${body}
 HEREDOC
@@ -600,6 +654,7 @@ run_conversions() {
         workbuddy)   convert_workbuddy   "$file" ;;
         hermes)      convert_hermes      "$file" ;;
         kiro)        convert_kiro        "$file" ;;
+        qoder)       convert_qoder       "$file" ;;
         aider)       accumulate_aider    "$file" ;;
         windsurf)    accumulate_windsurf "$file" ;;
       esac
@@ -626,7 +681,7 @@ main() {
     esac
   done
 
-  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "trae" "aider" "windsurf" "openclaw" "qwen" "codex" "deerflow" "workbuddy" "hermes" "kiro" "all")
+  local valid_tools=("antigravity" "gemini-cli" "opencode" "cursor" "trae" "aider" "windsurf" "openclaw" "qwen" "codex" "deerflow" "workbuddy" "hermes" "kiro" "qoder" "all")
   local valid=false
   for t in "${valid_tools[@]}"; do [[ "$t" == "$tool" ]] && valid=true && break; done
   if ! $valid; then
@@ -642,7 +697,7 @@ main() {
 
   local tools_to_run=()
   if [[ "$tool" == "all" ]]; then
-    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "trae" "aider" "windsurf" "openclaw" "qwen" "codex" "deerflow" "workbuddy" "hermes" "kiro")
+    tools_to_run=("antigravity" "gemini-cli" "opencode" "cursor" "trae" "aider" "windsurf" "openclaw" "qwen" "codex" "deerflow" "workbuddy" "hermes" "kiro" "qoder")
   else
     tools_to_run=("$tool")
   fi

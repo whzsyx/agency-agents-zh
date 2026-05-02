@@ -2,9 +2,9 @@
 
 🌐 **简体中文** | [繁體中文](README.zh-TW.md) | [English (upstream)](https://github.com/msitarzewski/agency-agents)
 
-> **211 个即插即用的 AI 专家角色** — 覆盖工程、设计、营销、产品、游戏、安全、金融等 18 个部门。不是通用提示词模板，每个智能体都有独立的人设、专业流程和可交付成果。支持 Claude Code / Cursor / Copilot 等 16 种 AI 编程工具。
+> **214 个即插即用的 AI 专家角色** — 覆盖工程、设计、营销、产品、游戏、安全、金融等 18 个部门。不是通用提示词模板，每个智能体都有独立的人设、专业流程和可交付成果。支持 Claude Code / Cursor / Copilot 等 17 种 AI 编程工具。
 
-[agency-agents](https://github.com/msitarzewski/agency-agents) 的中文社区版。在完整翻译上游的基础上，新增了 46 个中国市场原创智能体（小红书、抖音、微信、B站、飞书、钉钉等平台运营，以及跨境电商、政务ToG、医疗合规等垂直领域）。
+[agency-agents](https://github.com/msitarzewski/agency-agents) 的中文社区版。在完整翻译上游的基础上，新增了 49 个中国市场原创智能体（小红书、抖音、微信、B站、飞书、钉钉等平台运营，以及跨境电商、政务ToG、医疗合规、Qt 工业上位机、畜禽养殖档案核对等垂直领域）。
 
 [![GitHub stars](https://img.shields.io/github/stars/jnMetaCode/agency-agents-zh?style=social)](https://github.com/jnMetaCode/agency-agents-zh)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -15,7 +15,7 @@
 
 | 🤖 AI 智能体 | 🌏 英文版翻译 | 🇨🇳 中国市场原创 | 🧠 支持工具 | 🏢 部门 |
 |:---:|:---:|:---:|:---:|:---:|
-| **211** | **165** | **46** | **16 种** | **18 个** |
+| **214** | **165** | **49** | **17 种** | **18 个** |
 
 ---
 
@@ -47,7 +47,7 @@ ao compose "帮我写一篇关于 AI Agent 的深度分析文章" --run
 
 <p align="center">
   <a href="https://github.com/jnMetaCode/agency-orchestrator">
-    <strong>⭐ 查看 Agency Orchestrator — 让 211 个角色为你协作 →</strong>
+    <strong>⭐ 查看 Agency Orchestrator — 让 214 个角色为你协作 →</strong>
   </a>
 </p>
 
@@ -65,7 +65,7 @@ ao compose "帮我写一篇关于 AI Agent 的深度分析文章" --run
 
 ### 方式一：一键安装到你的 AI 工具
 
-支持 **16 种主流 AI 编程工具**，一条命令搞定：
+支持 **17 种主流 AI 编程工具**，一条命令搞定：
 
 ```bash
 # 自动检测已安装的工具，一键安装
@@ -88,6 +88,7 @@ ao compose "帮我写一篇关于 AI Agent 的深度分析文章" --run
 ./scripts/install.sh --tool deerflow       # DeerFlow 2.0 (ByteDance)
 ./scripts/install.sh --tool workbuddy      # WorkBuddy (Tencent)
 ./scripts/install.sh --tool hermes         # Hermes Agent (NousResearch)
+./scripts/install.sh --tool qoder          # Qoder
 ```
 
 > Claude Code 和 GitHub Copilot 可直接安装；其他工具需先运行 `./scripts/convert.sh` 转换格式。
@@ -139,6 +140,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | [技术文档工程师](engineering/engineering-technical-writer.md) | API 文档、开发者文档、docs-as-code | 技术文档、知识库 |
 | [自主优化架构师](engineering/engineering-autonomous-optimization-architect.md) | 自适应系统、自动调优 | 智能运维、自愈系统 |
 | [嵌入式固件工程师](engineering/engineering-embedded-firmware-engineer.md) | RTOS、外设驱动、低功耗设计 | IoT、嵌入式系统 |
+| [上位机工程师](engineering/engineering-pc-host-engineer.md) ⭐ | Qt/QML、QSerialPort、Modbus/CAN、QChart 实时可视化 | 工业上位机、检测设备、HMI |
 | [嵌入式 Linux 驱动工程师](engineering/engineering-embedded-linux-driver-engineer.md) ⭐ | 内核模块、设备树、Platform/I2C/SPI 驱动 | 嵌入式 Linux BSP 开发 |
 | [FPGA/ASIC 数字设计工程师](engineering/engineering-fpga-digital-design-engineer.md) ⭐ | Verilog/SystemVerilog、时序收敛、AXI 总线 | FPGA 开发、数字逻辑设计 |
 | [IoT 方案架构师](engineering/engineering-iot-solution-architect.md) ⭐ | MQTT/CoAP、边缘计算、设备管理、云平台 | 物联网端到端方案设计 |
@@ -201,6 +203,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | [微信公众号管理](marketing/marketing-wechat-official-account.md) | 订阅者运营、内容营销 | 微信公众号增长 |
 | [知乎策略师](marketing/marketing-zhihu-strategist.md) | 知识型内容、思想领袖建设 | 知乎品牌权威 |
 | [中国市场本地化策略师](marketing/marketing-china-market-localization-strategist.md) ⭐ | 抖音/小红书/微信/B站全栈本地化 | 中国市场进入策略 |
+| [新闻情报官](marketing/marketing-daily-news-briefing.md) ⭐ | 国内外多源新闻采集、交叉验证、结构化简报 | 内容生产线上游素材供应 |
 
 > ⭐ 标记的是本项目原创，更贴合国内实操。其余为上游英文版翻译。
 
@@ -490,7 +493,7 @@ cp -r marketing/*.md ~/.claude/agents/
 
 ## 工具集成
 
-支持 **16 种主流 AI 编程工具**，通过 `scripts/` 目录下的脚本实现格式转换和一键安装。
+支持 **17 种主流 AI 编程工具**，通过 `scripts/` 目录下的脚本实现格式转换和一键安装。
 
 ### 支持的工具
 
@@ -512,6 +515,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | **WorkBuddy** (腾讯) | `~/.workbuddy/skills/` | 全局，需转换 |
 | **Hermes Agent** (NousResearch) | `~/.hermes/skills/` | 全局，需转换 |
 | **DeerFlow 2.0** (字节跳动) | `skills/custom/` | 项目级，需转换 |
+| **Qoder** | `~/.qoder/agents/` 或 `.qoder/agents/` | 全局/项目级，需转换 |
 
 ### 使用方法
 
@@ -777,7 +781,25 @@ NousResearch 的开源 AI 智能体框架，支持技能系统、子代理编排
 ./scripts/install.sh --tool hermes
 ```
 
-安装后在 Hermes CLI 中可通过 `hermes skills` 查看和管理所有技能，或在对话中自然语言激活。
+安装后**推荐在 Hermes CLI** 中通过 `hermes skills` 查看和管理所有技能，或在对话中自然语言激活。
+
+> ⚠️ **Discord 模式下不要一次性全量安装**
+>
+> Hermes 的 Discord 集成会把每一个 skill 注册成 Discord 斜杠命令，Discord API 对 bot 所有命令的 JSON 序列化总长度有 **8000 字符硬上限**，超过后会返回 `error code 50035`（见 [issue #45](https://github.com/jnMetaCode/agency-agents-zh/issues/45)）。本仓库有近 200 个 skill，一次装全会直接炸 Discord。
+>
+> 解决办法：在 Discord 中使用时请按**分类**分批安装，用 `--category` 参数（可多次传入）：
+>
+> ```bash
+> # 只装 marketing 分类
+> ./scripts/install.sh --tool hermes --category marketing
+>
+> # 同时装 engineering 和 design
+> ./scripts/install.sh --tool hermes --category engineering --category design
+> ```
+>
+> 可选分类：`academic, blender, design, engineering, finance, game-development, godot, hr, legal, marketing, paid-media, product, project-management, roblox-studio, sales, spatial-computing, specialized, supply-chain, support, testing, unity, unreal-engine`。
+>
+> Hermes CLI 本身没有此限制，全量安装可以继续使用。
 </details>
 
 <details>
@@ -799,6 +821,23 @@ DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom ./scripts/install.sh --tool 
 安装后在 DeerFlow 的任务中，相关技能会自动加载。
 </details>
 
+<details>
+<summary><strong>Qoder</strong></summary>
+
+转换为 Qoder SubAgent 格式（Markdown + YAML frontmatter）并安装到 `~/.qoder/agents/`（全局）或项目目录 `.qoder/agents/`。
+
+```bash
+./scripts/convert.sh --tool qoder
+./scripts/install.sh --tool qoder
+```
+
+在 Qoder 中使用：
+- **自动触发**：用自然语言描述任务，Qoder 根据 description 自动选择智能体
+- **手动触发**：输入 `/agent-name`（如 `/engineering-frontend-developer`）
+
+> 官方文档：https://docs.qoder.com/zh/extensions/subagent
+</details>
+
 ### 修改智能体后重新生成
 
 添加新智能体或编辑现有智能体后，重新生成集成文件：
@@ -812,11 +851,11 @@ DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom ./scripts/install.sh --tool 
 
 ## 🇨🇳 中国市场原创智能体
 
-除翻译外，本项目包含 **46 个原创智能体**，专为中国平台和业务场景打造：
+除翻译外，本项目包含 **49 个原创智能体**，专为中国平台和业务场景打造：
 
 - **平台运营**：小红书、抖音、微信公众号/视频号/小程序、B站、快手、微博、知乎
 - **企业协作**：飞书、钉钉集成开发
-- **垂直领域**：跨境电商、政务ToG、医疗合规、高考志愿、留学规划
+- **垂直领域**：跨境电商、政务ToG、医疗合规、高考志愿、留学规划、Qt 工业上位机、畜禽养殖档案核对
 - **业务支撑**：私域流量、直播电商、库存预测、合同审查、发票管理
 
 > 在上方智能体阵容中标有 ⭐ 的即为原创智能体。
@@ -857,19 +896,20 @@ DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom ./scripts/install.sh --tool 
 
 | 渠道 | 加入方式 |
 |------|---------|
-| QQ 群 | [点击加入](https://qm.qq.com/q/EeNQA9xCxy)（群号 1071280067） |
+| QQ 2群 | [点击加入](https://qm.qq.com/q/EeNQA9xCxy)（群号 1071280067） |
 | 微信群 | 关注公众号后回复「群」获取入群方式 |
 
 ---
 
 ## 姊妹项目
 
-| 项目 | 说明 |
-|------|------|
-| [ai-coding-guide](https://github.com/jnMetaCode/ai-coding-guide) | AI 编程工具实战指南 — 66 个 Claude Code 技巧 + 9 款工具最佳实践 + 可复制配置模板 |
-| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | 🚀 多智能体编排引擎 — 一句话调度 211+ 角色自动协作，DAG 并行执行，6 种免费 LLM + 3 种 API，32 个现成模板 |
-| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) | AI 编程超能力 · 中文版 — 20 个 skills，让你的 AI 编程助手真正会干活 |
-| [shellward](https://github.com/jnMetaCode/shellward) | AI 智能体安全中间件 — 注入检测、数据防泄露、命令安全、零依赖、MCP Server |
+| 项目 | 定位 | 一句话 |
+|------|------|-------|
+| **本项目**（agency-agents-zh） ![](https://img.shields.io/github/stars/jnMetaCode/agency-agents-zh?style=flat&label=⭐) | 🎭 专家角色库 | 214 个**即插即用** AI 专家，含 49 中国原创（小红书 / 抖音 / 飞书 / 钉钉 / Qt 上位机） |
+| [agency-orchestrator](https://github.com/jnMetaCode/agency-orchestrator) | 🚀 编排引擎 | 一句话 → 214 专家协作，**几分钟出方案**（9 家 LLM / 6 免费） |
+| [superpowers-zh](https://github.com/jnMetaCode/superpowers-zh) ![](https://img.shields.io/github/stars/jnMetaCode/superpowers-zh?style=flat&label=⭐) | 🧠 工作方法论 | 20 个 skills 教 AI 怎么干活（TDD / 调试 / 代码审查等） |
+| [ai-coding-guide](https://github.com/jnMetaCode/ai-coding-guide) | 📖 实战教程 | 66 个 Claude Code 技巧 + 9 款工具最佳实践 + 配置模板 |
+| [shellward](https://github.com/jnMetaCode/shellward) | 🛡️ 安全中间件 | 8 层防御 + DLP 数据流 + 注入检测，**零依赖**（含 MCP Server） |
 
 ---
 
@@ -888,10 +928,16 @@ MIT License — 自由使用，商业或个人均可。
 
 <div align="center">
 
-**211 个 AI 专家角色，16 种工具支持，即装即用**
+**214 个 AI 专家角色，17 种工具支持，即装即用**
 
 [⭐ Star 本项目](https://github.com/jnMetaCode/agency-agents-zh) · [提交 Issue](https://github.com/jnMetaCode/agency-agents-zh/issues) · [贡献代码](https://github.com/jnMetaCode/agency-agents-zh/pulls)
 
 基于 [agency-agents](https://github.com/msitarzewski/agency-agents) 翻译并本土化
 
 </div>
+
+---
+
+## ⭐ Star 趋势
+
+[![Star History Chart](https://api.star-history.com/svg?repos=jnMetaCode/agency-agents-zh&type=Date)](https://star-history.com/#jnMetaCode/agency-agents-zh&Date)
