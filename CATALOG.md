@@ -30,7 +30,7 @@
 | 视觉叙事师 | `design/design-visual-storyteller.md` |
 | 趣味注入师 | `design/design-whimsy-injector.md` |
 
-## 🛠️ 工程部 (33)
+## 🛠️ 工程部 (35)
 
 | 中文名 | 文件路径 |
 |--------|----------|
@@ -47,12 +47,14 @@
 | DevOps 自动化师 | `engineering/engineering-devops-automator.md` |
 | 钉钉集成开发工程师 | `engineering/engineering-dingtalk-integration-developer.md` |
 | 嵌入式固件工程师 | `engineering/engineering-embedded-firmware-engineer.md` |
+| 上位机工程师 | `engineering/engineering-pc-host-engineer.md` |
 | Filament 优化专家 | `engineering/engineering-filament-optimization-specialist.md` |
 | 嵌入式 Linux 驱动工程师 | `engineering/engineering-embedded-linux-driver-engineer.md` |
 | 飞书集成开发工程师 | `engineering/engineering-feishu-integration-developer.md` |
 | FPGA/ASIC 数字设计工程师 | `engineering/engineering-fpga-digital-design-engineer.md` |
 | 前端开发者 | `engineering/engineering-frontend-developer.md` |
 | Git 工作流大师 | `engineering/engineering-git-workflow-master.md` |
+| 机械设计工程师 | `engineering/engineering-mechanical-design-engineer.md` |
 | 故障响应指挥官 | `engineering/engineering-incident-response-commander.md` |
 | IoT 方案架构师 | `engineering/engineering-iot-solution-architect.md` |
 | 最小变更工程师 | `engineering/engineering-minimal-change-engineer.md` |
@@ -120,7 +122,7 @@
 | 合同审查专家 | `legal/legal-contract-reviewer.md` |
 | 制度文件撰写专家 | `legal/legal-policy-writer.md` |
 
-## 📢 营销部 (35)
+## 📢 营销部 (36)
 
 | 中文名 | 文件路径 |
 |--------|----------|
@@ -132,6 +134,7 @@
 | 图书联合作者 | `marketing/marketing-book-co-author.md` |
 | 轮播图增长引擎 | `marketing/marketing-carousel-growth-engine.md` |
 | 中国市场本地化策略师 | `marketing/marketing-china-market-localization-strategist.md` |
+| 新闻情报官 | `marketing/marketing-daily-news-briefing.md` |
 | 中国电商运营专家 | `marketing/marketing-china-ecommerce-operator.md` |
 | 内容创作者 | `marketing/marketing-content-creator.md` |
 | 跨境电商运营专家 | `marketing/marketing-cross-border-ecommerce.md` |
@@ -217,7 +220,7 @@
 | XR 沉浸式开发者 | `spatial-computing/xr-immersive-developer.md` |
 | XR 界面架构师 | `spatial-computing/xr-interface-architect.md` |
 
-## 🔬 专项部 (45)
+## 🔬 专项部 (46)
 
 | 中文名 | 文件路径 |
 |--------|----------|
@@ -227,6 +230,7 @@
 | 自动化治理架构师 | `specialized/automation-governance-architect.md` |
 | 区块链安全审计师 | `specialized/blockchain-security-auditor.md` |
 | 合规审计师 | `specialized/compliance-auditor.md` |
+| 养殖档案核对员 | `specialized/livestock-archive-auditor.md` |
 | 土木工程师 | `specialized/specialized-civil-engineer.md` |
 | 企业培训课程设计师 | `specialized/corporate-training-designer.md` |
 | 数据整合师 | `specialized/data-consolidation-agent.md` |
@@ -267,15 +271,16 @@
 | 技术翻译专家 | `specialized/technical-translator-agent.md` |
 | ZK 管家 | `specialized/zk-steward.md` |
 
-## 🚚 供应链部 (3)
+## 🚚 供应链部 (4)
 
 | 中文名 | 文件路径 |
 |--------|----------|
 | 库存预测专家 | `supply-chain/supply-chain-inventory-forecaster.md` |
 | 物流路线优化师 | `supply-chain/supply-chain-route-optimizer.md` |
+| 供应链采购策略师 | `supply-chain/supply-chain-strategist.md` |
 | 供应商评估专家 | `supply-chain/supply-chain-vendor-evaluator.md` |
 
-## 🤝 支持部 (8)
+## 🤝 支持部 (7)
 
 | 中文名 | 文件路径 |
 |--------|----------|
@@ -285,7 +290,6 @@
 | 基础设施运维师 | `support/support-infrastructure-maintainer.md` |
 | 法务合规员 | `support/support-legal-compliance-checker.md` |
 | 招聘运营专家 | `support/support-recruitment-specialist.md` |
-| 供应链采购策略师 | `support/support-supply-chain-strategist.md` |
 | 客服响应者 | `support/support-support-responder.md` |
 
 ## 🧪 测试部 (9)

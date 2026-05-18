@@ -2,9 +2,9 @@
 
 🌐 [簡體中文](README.md) | **繁體中文** | [English (upstream)](https://github.com/msitarzewski/agency-agents)
 
-> **193 個即插即用的 AI 專家角色** — 覆蓋工程、設計、行銷、產品、遊戲、安全、金融等 18 個部門。不是通用提示詞範本，每個智能體都有獨立的人設、專業流程和可交付成果。支援 Claude Code / Cursor / Copilot 等 16 種 AI 程式設計工具。
+> **197 個即插即用的 AI 專家角色** — 覆蓋工程、設計、行銷、產品、遊戲、安全、金融等 18 個部門。不是通用提示詞範本，每個智能體都有獨立的人設、專業流程和可交付成果。支援 Claude Code / Cursor / Copilot 等 17 種 AI 程式設計工具。
 
-[agency-agents](https://github.com/msitarzewski/agency-agents) 的中文社群版。在完整翻譯上游的基礎上，新增了 46 個中國市場原創智能體（小紅書、抖音、微信、B站、飛書、釘釘等平台運營，以及跨境電商、政務ToG、醫療合規等垂直領域）。
+[agency-agents](https://github.com/msitarzewski/agency-agents) 的中文社群版。在完整翻譯上游的基礎上，新增了 50 個中國市場原創智能體（小紅書、抖音、微信、B站、飛書、釘釘等平台運營，以及跨境電商、政務ToG、醫療合規、Qt 工業上位機、機械設計、畜禽養殖檔案核對等垂直領域）。
 
 [![GitHub stars](https://img.shields.io/github/stars/jnMetaCode/agency-agents-zh?style=social)](https://github.com/jnMetaCode/agency-agents-zh)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -14,7 +14,7 @@
 
 | 🤖 AI 智能體 | 🌏 英文版翻譯 | 🇨🇳 中國市場原創 | 🧠 支援工具 | 🏢 部門 |
 |:---:|:---:|:---:|:---:|:---:|
-| **193** | **147** | **46** | **16 種** | **18 個** |
+| **197** | **147** | **50** | **17 種** | **18 個** |
 
 ---
 
@@ -28,7 +28,7 @@
 
 ### 方式一：一鍵安裝到你的 AI 工具
 
-支援 **16 種主流 AI 程式設計工具**，一條命令搞定：
+支援 **17 種主流 AI 程式設計工具**，一條命令搞定：
 
 ```bash
 # 自動檢測已安裝的工具，一鍵安裝
@@ -51,6 +51,7 @@
 ./scripts/install.sh --tool deerflow       # DeerFlow 2.0 (ByteDance)
 ./scripts/install.sh --tool workbuddy      # WorkBuddy (Tencent)
 ./scripts/install.sh --tool hermes         # Hermes Agent (NousResearch)
+./scripts/install.sh --tool qoder          # Qoder
 ```
 
 > Claude Code 和 GitHub Copilot 可直接安裝；其他工具需先執行 `./scripts/convert.sh` 轉換格式。
@@ -117,6 +118,8 @@ cp -r marketing/*.md ~/.claude/agents/
 | [AI 資料修復工程師](engineering/engineering-ai-data-remediation-engineer.md) | 自愈管道、SLM 語義聚類、零資料丟失 | 大規模資料異常修復 |
 | [飛書整合開發工程師](engineering/engineering-feishu-integration-developer.md) ⭐ | 飛書機器人、審批流、多維表格 | 飛書生態整合開發 |
 | [釘釘整合開發工程師](engineering/engineering-dingtalk-integration-developer.md) ⭐ | 釘釘機器人、酷應用、聯結器 | 釘釘生態整合開發 |
+| [上位機工程師](engineering/engineering-pc-host-engineer.md) ⭐ | Qt/QML、QSerialPort、Modbus/CAN、QChart 即時可視化 | 工業上位機、檢測設備、HMI |
+| [機械設計工程師](engineering/engineering-mechanical-design-engineer.md) ⭐ | 傳動選型、強度剛度疲勞振動校核、DFMA、GB/ISO 標準件 | 工業裝備、自動化產線、檢測儀器 |
 
 ### 🎨 設計部
 
@@ -160,6 +163,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | [小紅書專家](marketing/marketing-xiaohongshu-specialist.md) | 生活方式內容、趨勢策略 | 小紅書品牌建設 |
 | [微信公眾號管理](marketing/marketing-wechat-official-account.md) | 訂閱者運營、內容營銷 | 微信公眾號增長 |
 | [知乎策略師](marketing/marketing-zhihu-strategist.md) | 知識型內容、思想領袖建設 | 知乎品牌權威 |
+| [新聞情報官](marketing/marketing-daily-news-briefing.md) ⭐ | 國內外多源新聞採集、交叉驗證、結構化簡報 | 內容生產線上游素材供應 |
 
 > ⭐ 標記的是本專案原創，更貼合國內實操。其餘為上游英文版翻譯。
 
@@ -251,6 +255,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | [庫存預測專家](supply-chain/supply-chain-inventory-forecaster.md) ⭐ | 需求預測、安全庫存、618/雙11備貨 | 庫存管理與補貨最佳化 |
 | [供應商評估專家](supply-chain/supply-chain-vendor-evaluator.md) ⭐ | 1688供應商、驗廠、國標質檢 | 供應商准入與分級管理 |
 | [物流路線最佳化師](supply-chain/supply-chain-route-optimizer.md) ⭐ | 順豐/通達系、冷鏈、跨境物流 | 物流成本最佳化與路線規劃 |
+| [供應鏈採購策略師](supply-chain/supply-chain-strategist.md) ⭐ | 1688採購、質檢、供應商管理、ERP | 供應鏈與採購管理 |
 
 ### 📦 產品部
 
@@ -306,7 +311,6 @@ cp -r marketing/*.md ~/.claude/agents/
 | [財務追蹤員](support/support-finance-tracker.md) | 財務分析、預算管理 | 財務規劃、成本管控 |
 | [基礎設施運維師](support/support-infrastructure-maintainer.md) | 系統運維、可靠性工程 | 基礎設施管理、故障排查 |
 | [招聘運營專家](support/support-recruitment-specialist.md) ⭐ | Boss直聘/獵聘、勞動法、校招社招 | 招聘全流程與HR合規 |
-| [供應鏈採購策略師](support/support-supply-chain-strategist.md) ⭐ | 1688採購、質檢、供應商管理、ERP | 供應鏈與採購管理 |
 
 ### 🔬 專項部
 
@@ -322,6 +326,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | [報告分發師](specialized/report-distribution-agent.md) | 報告分發、多渠道推送 | 自動化報告分發 |
 | [銷售資料提取師](specialized/sales-data-extraction-agent.md) | 銷售資料採集、結構化 | CRM 資料處理 |
 | [合規審計師](specialized/compliance-auditor.md) | SOC 2/ISO 27001/HIPAA 合規 | 合規審計、安全認證 |
+| [養殖檔案核對員](specialized/livestock-archive-auditor.md) ⭐ | 養殖檔案、生產日報、批號 FIFO | 畜禽臺帳錯填漏填核對 |
 | [應付賬款智能體](specialized/accounts-payable-agent.md) | 發票處理、付款自動化 | 財務流程自動化 |
 | [身份圖譜操作員](specialized/identity-graph-operator.md) | 身份解析、多源匹配 | 使用者身份治理 |
 | [文化智慧策略師](specialized/specialized-cultural-intelligence-strategist.md) | 文化洞察、跨文化設計 | 全球化產品、本地化策略 |
@@ -442,7 +447,7 @@ cp -r marketing/*.md ~/.claude/agents/
 
 ## 工具整合
 
-支援 **16 種主流 AI 程式設計工具**，透過 `scripts/` 目錄下的指令碼實現格式轉換和一鍵安裝。
+支援 **17 種主流 AI 程式設計工具**，透過 `scripts/` 目錄下的指令碼實現格式轉換和一鍵安裝。
 
 ### 支援的工具
 
@@ -464,6 +469,7 @@ cp -r marketing/*.md ~/.claude/agents/
 | **WorkBuddy** (騰訊) | `~/.workbuddy/skills/` | 全局，需轉換 |
 | **Hermes Agent** (NousResearch) | `~/.hermes/skills/` | 全局，需轉換 |
 | **DeerFlow 2.0** (位元組跳動) | `skills/custom/` | 專案級，需轉換 |
+| **Qoder** | `~/.qoder/agents/` 或 `.qoder/agents/` | 全域/專案級，需轉換 |
 
 ### 使用方法
 
@@ -621,13 +627,25 @@ cp integrations/cursor/rules/engineering-code-reviewer.mdc /your/project/.cursor
 <details>
 <summary><strong>Trae</strong></summary>
 
-轉換為 Trae rule 檔案並安裝到專案目錄 `.trae/rules/`。格式與 Cursor 類似。
+轉換為 Trae rule 檔案並安裝到專案目錄 `.trae/rules/`。格式與 Cursor 同源（僅副檔名 `.md` 不同）。
 
 ```bash
 ./scripts/convert.sh --tool trae
 cd /your/project
 /path/to/agency-agents-zh/scripts/install.sh --tool trae
 ```
+
+**⚠️ 關於「裝了但幾乎不自動觸發」**（見 [issue #59](https://github.com/jnMetaCode/agency-agents-zh/issues/59)）：
+
+轉換出的 rule 預設 `alwaysApply: false` + 空 `globs:`，屬於 "agent-requested rule"——Trae 模型讀 description 自行決定是否載入。**全裝 215 條 rule 會讓 description 互相稀釋、幾乎命中不到任何一條**，這是設計行為不是 bug。
+
+**正確姿勢**：
+
+1. **精選安裝（推薦）**：只挑 10–20 條常用 rule 放進 `.trae/rules/`，自動匹配才會真正起作用。
+2. **`@` 顯式呼叫**：對話裡輸入 `@engineering-pc-host-engineer ...` 強制載入某條 rule。
+3. **核心 rule 改 alwaysApply**：把程式碼審查、git 工作流之類的 1–3 條改成 `alwaysApply: true` 長期生效。
+
+詳細說明見 [integrations/trae/README.md](integrations/trae/README.md)。
 </details>
 
 <details>
@@ -751,6 +769,23 @@ DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom ./scripts/install.sh --tool 
 安裝後在 DeerFlow 的任務中，相關技能會自動載入。
 </details>
 
+<details>
+<summary><strong>Qoder</strong></summary>
+
+轉換為 Qoder SubAgent 格式（Markdown + YAML frontmatter）並安裝到 `~/.qoder/agents/`（全域）或專案目錄 `.qoder/agents/`。
+
+```bash
+./scripts/convert.sh --tool qoder
+./scripts/install.sh --tool qoder
+```
+
+在 Qoder 中使用：
+- **自動觸發**：用自然語言描述任務，Qoder 根據 description 自動選擇智能體
+- **手動觸發**：輸入 `/agent-name`（如 `/engineering-frontend-developer`）
+
+> 官方文件：https://docs.qoder.com/zh/extensions/subagent
+</details>
+
 ### 修改智能體後重新生成
 
 新增新智能體或編輯現有智能體後，重新生成整合檔案：
@@ -764,11 +799,11 @@ DEERFLOW_SKILLS_DIR=/path/to/deerflow/skills/custom ./scripts/install.sh --tool 
 
 ## 🇨🇳 中國市場原創智能體
 
-除翻譯外，本專案包含 **46 個原創智能體**，專為中國平臺和業務場景打造：
+除翻譯外，本專案包含 **50 個原創智能體**，專為中國平臺和業務場景打造：
 
 - **平臺運營**：小紅書、抖音、微信公眾號/視頻號/小程序、B站、快手、微博、知乎
 - **企業協作**：飛書、釘釘整合開發
-- **垂直領域**：跨境電商、政務ToG、醫療合規、高考志願、留學規劃
+- **垂直領域**：跨境電商、政務ToG、醫療合規、高考志願、留學規劃、Qt 工業上位機、畜禽養殖檔案核對
 - **業務支撐**：私域流量、直播電商、庫存預測、合約審查、發票管理
 
 > 在上方智能體陣容中標有 ⭐ 的即為原創智能體。
